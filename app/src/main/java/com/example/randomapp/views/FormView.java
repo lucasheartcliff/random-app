@@ -1,4 +1,4 @@
-package com.example.calculator3.views;
+package com.example.randomapp.views;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -11,8 +11,11 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.calculator3.R;
-import com.example.calculator3.model.FormModel;
-import com.example.calculator3.model.Sex;
+import com.example.randomapp.exceptions.FormException;
+import com.example.randomapp.model.FormModel;
+import com.example.randomapp.model.Sex;
+import com.example.randomapp.model.ZoneSituation;
+import com.example.randomapp.service.IMCService;
 
 public class FormView extends View {
     EditText ageInput, weightInput, heightInput;
@@ -28,6 +31,7 @@ public class FormView extends View {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.form);
+        associateElements();
 
     }
 
@@ -69,20 +73,24 @@ public class FormView extends View {
 
         try {
             formModel.validate();
-        } catch (Exception e) {
+
+            toView(FormView.this, LoadingView.class);
+
+            // Calculate
+
+            IMCService imcService = new IMCService();
+            ZoneSituation situation = imcService.calculateIMC(formModel);
+
+            Handler handler = new Handler();
+            handler.postDelayed(() -> {
+                toView(FormView.this, ResultView.class,new Object[]{formModel,situation}, 0);
+            }, 3000);
+
+
+        } catch (FormException e) {
             errorMessage.setText(e.getMessage());
+        }catch (Exception e){
+            throw  new RuntimeException(e);
         }
-
-        toView(FormView.this, LoadingView.class);
-
-        // Calculate
-
-
-        Handler handler = new Handler();
-        handler.postDelayed(() -> {
-            toView(FormView.this, ResultView.class, formModel, 0);
-        }, 3000);
-
-
     }
 }

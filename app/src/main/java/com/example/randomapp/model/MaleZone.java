@@ -1,4 +1,4 @@
-package com.example.calculator3.model;
+package com.example.randomapp.model;
 
 public class MaleZone extends Zones{
     public MaleZone() {

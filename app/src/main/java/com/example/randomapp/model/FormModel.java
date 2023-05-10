@@ -1,8 +1,8 @@
 
-package com.example.calculator3.model;
+package com.example.randomapp.model;
 
 
-import com.example.calculator3.exceptions.FormException;
+import com.example.randomapp.exceptions.FormException;
 
 import java.io.Serializable;
 

@@ -1,4 +1,4 @@
-package com.example.calculator3.views;
+package com.example.randomapp.views;
 
 import android.os.Bundle;
 import android.widget.Button;
@@ -12,6 +12,7 @@ public class ActivityMainView extends View {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        associateElements();
     }
     @Override
     protected void associateElements() {

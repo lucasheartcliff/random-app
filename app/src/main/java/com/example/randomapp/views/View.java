@@ -1,9 +1,8 @@
-package com.example.calculator3.views;
+package com.example.randomapp.views;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Handler;
 import android.widget.EditText;
 
@@ -12,7 +11,7 @@ import java.io.Serializable;
 public abstract class View extends Activity {
 
     protected Double parseEditTextValueToDouble(EditText et) {
-        return et.getText() == null ? null : Double.parseDouble(et.getText().toString());
+        return et.getText() == null ? null : et.getText().toString().equals("") ? null : Double.parseDouble(et.getText().toString());
     }
 
     protected Integer parseEditTextValueToInteger(EditText et) {
@@ -36,7 +35,7 @@ public abstract class View extends Activity {
             @Override
             public void run() {
                 Intent intent = new Intent(ctx, clazz);
-                intent.putExtra("params", param);
+                if (param != null) intent.putExtra("params", param);
                 startActivity(intent);
                 finish();
             }

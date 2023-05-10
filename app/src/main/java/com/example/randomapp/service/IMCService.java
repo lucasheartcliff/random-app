@@ -1,11 +1,11 @@
-package com.example.calculator3.service;
+package com.example.randomapp.service;
 
-import com.example.calculator3.model.FemaleZone;
-import com.example.calculator3.model.FormModel;
-import com.example.calculator3.model.MaleZone;
-import com.example.calculator3.model.Sex;
-import com.example.calculator3.model.ZoneSituation;
-import com.example.calculator3.model.Zones;
+import com.example.randomapp.model.FemaleZone;
+import com.example.randomapp.model.FormModel;
+import com.example.randomapp.model.MaleZone;
+import com.example.randomapp.model.Sex;
+import com.example.randomapp.model.ZoneSituation;
+import com.example.randomapp.model.Zones;
 
 public class IMCService {
 

@@ -1,12 +1,12 @@
-package com.example.calculator3.views;
+package com.example.randomapp.views;
 
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.calculator3.R;
-import com.example.calculator3.model.FormModel;
-import com.example.calculator3.model.ZoneSituation;
+import com.example.randomapp.model.FormModel;
+import com.example.randomapp.model.ZoneSituation;
 
 public class ResultView extends View {
     private TextView resultMessage, recommendationMessage;

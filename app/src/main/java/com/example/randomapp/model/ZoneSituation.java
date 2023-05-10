@@ -1,4 +1,4 @@
-package com.example.calculator3.model;
+package com.example.randomapp.model;
 
 import android.annotation.SuppressLint;
 

@@ -1,8 +1,6 @@
-package com.example.calculator3.model;
+package com.example.randomapp.model;
 
 import android.annotation.SuppressLint;
-
-import java.util.Optional;
 
 public abstract class Zones {
     private Double[] lowWeight;

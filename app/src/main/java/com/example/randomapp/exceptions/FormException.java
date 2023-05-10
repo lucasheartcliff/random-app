@@ -1,4 +1,4 @@
-package com.example.calculator3.exceptions;
+package com.example.randomapp.exceptions;
 
 public class FormException extends RuntimeException{
 
