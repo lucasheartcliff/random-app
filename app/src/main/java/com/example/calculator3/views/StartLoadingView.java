@@ -11,7 +11,7 @@ public class StartLoadingView extends View {
 
         setContentView(R.layout.start_loading);
 
-        toView(StartLoadingView.this, ActivityMainView.class, 3000);
+        toView(StartLoadingView.this, ActivityMainView.class, null,3000);
     }
 
     @Override

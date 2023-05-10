@@ -1,7 +1,7 @@
 
 package com.example.calculator3.model;
 
-public enum Sex{
+public enum Sex {
   MALE,
   FEMALE;
 }

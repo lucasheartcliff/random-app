@@ -7,12 +7,14 @@ import com.example.calculator3.exceptions.FormException;
 import java.io.Serializable;
 
 public class FormModel implements Serializable {
-    Integer age;
-    Double height;
-    Double weight;
-    Sex sex;
-    String favoriteFood;
-    boolean isActive;
+    private Integer age;
+    private Double height;
+    private Double weight;
+    private Sex sex;
+    private String favoriteFood;
+    private boolean isActive;
+
+    private boolean hasValidated = false;
 
 
     public void validate() {
@@ -21,7 +23,8 @@ public class FormModel implements Serializable {
         validateField(weight, "Peso");
         validateField(sex, "Sexo");
         validateField(favoriteFood, "Comida Favorita");
-
+        if (age <= 15) throw new FormException("A idade deve ser maior do que 15 anos.");
+        hasValidated=true;
     }
 
     private void validateField(Object field, String fieldName) {
@@ -78,5 +81,9 @@ public class FormModel implements Serializable {
 
     public void setActive(boolean isActive) {
         this.isActive = isActive;
+    }
+
+    public boolean hasValidated(){
+        return hasValidated;
     }
 }

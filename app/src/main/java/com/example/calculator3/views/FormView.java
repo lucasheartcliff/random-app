@@ -74,6 +74,10 @@ public class FormView extends View {
         }
 
         toView(FormView.this, LoadingView.class);
+
+        // Calculate
+
+
         Handler handler = new Handler();
         handler.postDelayed(() -> {
             toView(FormView.this, ResultView.class, formModel, 0);

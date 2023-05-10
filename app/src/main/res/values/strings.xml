@@ -2,6 +2,6 @@
     <string name="app_name">calculator3</string>
 
     <string-array name="operations">
-        <item>Soma</item><item>Subtração</item><item>Multiplicação</item><item>Divisão</item><item>Exponenciação</item><item>Radiciação</item>
+        <item>Pizza</item><item>Hamburger</item><item>Brigadeiro</item><item>Lasanha</item><item>Pudim</item>
     </string-array>
 </resources>
