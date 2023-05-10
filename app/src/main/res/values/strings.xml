@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">calculator3</string>
+
+    <string-array name="operations">
+        <item>Soma</item><item>Subtração</item><item>Multiplicação</item><item>Divisão</item><item>Exponenciação</item><item>Radiciação</item>
+    </string-array>
+</resources>
