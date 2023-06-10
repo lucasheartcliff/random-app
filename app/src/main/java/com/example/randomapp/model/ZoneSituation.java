@@ -13,7 +13,7 @@ public enum ZoneSituation {
     OVER("acima do peso"),
     SEVERAL_OVER("muito acima do peso");
 
-    private String situation;
+    private final String situation;
     private static final Map<Integer, ZoneSituation> map = new HashMap<Integer, ZoneSituation>() {{
         put(0, LOW);
         put(1, NORMAL);

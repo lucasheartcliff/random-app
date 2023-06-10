@@ -1,7 +1,8 @@
 <resources>
-    <string name="app_name">calculator3</string>
-
-    <string-array name="operations">
-        <item>Pizza</item><item>Hamburger</item><item>Brigadeiro</item><item>Lasanha</item><item>Pudim</item>
+    <string name="app_name">randomapp</string>
+    <string-array name="weather_options">
+        <item>Sunny</item>
+        <item>Rainy</item>
+        <item>Cloudy</item>
     </string-array>
 </resources>
