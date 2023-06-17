@@ -1,14 +1,21 @@
 package com.example.randomapp.views;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Handler;
 import android.widget.EditText;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.io.Serializable;
+import java.util.Optional;
 
 public abstract class View extends Activity {
+    protected static final String PREFS_NAME = "random_app";
+
 
     protected Double parseEditTextValueToDouble(EditText et) {
         return et.getText() == null ? null : et.getText().toString().equals("") ? null : Double.parseDouble(et.getText().toString());
@@ -42,7 +49,12 @@ public abstract class View extends Activity {
         }, Math.max(delay, 0));
     }
 
-    protected Serializable getParamsObject() {
-        return getIntent().getSerializableExtra("params");
+    @SuppressLint("NewApi")
+    protected <T extends Serializable> Optional<T> getParamsObject() {
+        return Optional.ofNullable((T) getIntent().getSerializableExtra("params") );
+    }
+
+    protected SharedPreferences getSharedPreferences(){
+        return super.getSharedPreferences(PREFS_NAME,Context.MODE_PRIVATE);
     }
 }

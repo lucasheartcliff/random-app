@@ -8,7 +8,6 @@
     <!-- input_layout.xml -->
 
     <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -44,13 +43,8 @@
             android:id="@+id/edit_foundation_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Foundation Date" />
-
-        <CheckBox
-            android:id="@+id/checkbox_airports"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Has Airports" />
+            android:hint="Foundation Date"
+            android:inputType="date" />
 
         <EditText
             android:id="@+id/edit_extension_area"
@@ -61,10 +55,15 @@
 
         <Spinner
             android:id="@+id/spinner_weather"
-            android:layout_width="match_parent"
+            android:layout_width="378dp"
+            android:layout_height="46dp"
+            android:entries="@array/weather_options"/>
+
+        <CheckBox
+            android:id="@+id/checkbox_airports"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:prompt="@string/select_weather"
-            android:entries="@array/weather_options" />
+            android:text="Has Airports" />
 
         <CheckBox
             android:id="@+id/checkbox_touristic"
@@ -72,12 +71,12 @@
             android:layout_height="wrap_content"
             android:text="Is Touristic" />
 
-        <EditText
-            android:id="@+id/edit_rate"
-            android:layout_width="match_parent"
+        <RatingBar
+            android:id="@+id/rate"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Rate"
-            android:inputType="number" />
+            android:numStars="5"
+            android:rating="5" />
 
         <Button
             android:id="@+id/btn_save"

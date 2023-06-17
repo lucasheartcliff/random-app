@@ -4,10 +4,9 @@ import android.os.Bundle;
 import android.widget.Button;
 
 import com.example.calculator3.R;
-import com.example.randomapp.model.OperationTypes;
 
 public class ActivityMainView extends View {
-    private Button calculate,addiction,subtraction,multiplication,division;
+    private Button citiesButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,27 +16,11 @@ public class ActivityMainView extends View {
     }
     @Override
     protected void associateElements() {
-        calculate = (Button) findViewById(R.id.mainCalculateButton);
-        calculate.setOnClickListener(this::onClickToCalculate);
-
-        addiction = (Button) findViewById(R.id.mainCalculateAdditctionButton);
-        addiction.setOnClickListener((v)->this.addOperationTypeAndCallView(OperationTypes.ADDITION));
-
-        subtraction = (Button) findViewById(R.id.mainCalculateSubtractionButton);
-        subtraction.setOnClickListener((v)->this.addOperationTypeAndCallView(OperationTypes.SUBTRACTION));
-
-        multiplication = (Button) findViewById(R.id.mainCalculateMultiplicationButton);
-        multiplication.setOnClickListener((v)->this.addOperationTypeAndCallView(OperationTypes.MULTIPLICATION));
-
-        division = (Button) findViewById(R.id.mainCalculateDivisionButton);
-        division.setOnClickListener((v)->this.addOperationTypeAndCallView(OperationTypes.DIVISION));
+        citiesButton = findViewById(R.id.mainCitiesButton);
+        citiesButton.setOnClickListener(this::gotoCitiesPage);
     }
 
-    private void addOperationTypeAndCallView(OperationTypes type){
-        toView(ActivityMainView.this, CalculatorView.class,type,0);
-    }
-
-    private void onClickToCalculate(android.view.View view) {
-        toView(ActivityMainView.this, FormView.class);
+    private void gotoCitiesPage(android.view.View view) {
+        toView(view.getContext(), CitiesListView.class,null,0);
     }
 }
