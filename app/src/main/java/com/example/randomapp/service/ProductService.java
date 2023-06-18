@@ -7,7 +7,7 @@ import java.util.Date;
 import java.util.List;
 
 public class ProductService {
-    private final  ProductDAO productDAO;
+    private final ProductDAO productDAO;
 
     public ProductService(ProductDAO productDAO) {
         this.productDAO = productDAO;
@@ -15,21 +15,42 @@ public class ProductService {
 
 
     public List<Product> getAll(){
-        return productDAO.getAll();
+        try{
+            productDAO.open();
+            return productDAO.getAll();
+        }finally {
+            productDAO.close();
+        }
     }
 
     public Product create(Product product){
-        product.setCreatedAt(new Date());
-        product.setUpdatedAt(new Date());
-        return productDAO.create(product);
+        try{
+            productDAO.open();
+            product.setCreatedAt(new Date());
+            product.setUpdatedAt(new Date());
+            return productDAO.create(product);
+        }finally {
+            productDAO.close();
+        }
+
     }
 
     public Product update(Product product){
-        product.setUpdatedAt(new Date());
-        return productDAO.update(product);
+        try {
+            productDAO.open();
+            product.setUpdatedAt(new Date());
+            return productDAO.update(product);
+        }finally {
+            productDAO.close();
+        }
     }
 
     public void delete(Product product){
-        productDAO.delete(product.getId());
+        try {
+            productDAO.open();
+            productDAO.delete(product.getId());
+        }finally {
+            productDAO.close();
+        }
     }
 }

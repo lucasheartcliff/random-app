@@ -17,13 +17,13 @@ public class ProductSQLHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
     private static final String CREATE_DATABASE = " create table "
             + TABLE + "("
-            + ID + "  bigint primary key autoincrement , "
+            + ID + "  integer primary key autoincrement , "
             + NAME + " text not null , "
             + BRAND + " text not null , "
             + IS_REGULATED + " boolean not null , "
             + RATE + " double not null , "
-            + CREATED_AT + " date not null , "
-            + UPDATED_AT + " date not null ); ";
+            + CREATED_AT + " bigint not null , "
+            + UPDATED_AT + " bigint not null ); ";
 
     public ProductSQLHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -31,12 +31,12 @@ public class ProductSQLHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate ( SQLiteDatabase database ) {
-        database . execSQL ( CREATE_DATABASE );
+        database.execSQL ( CREATE_DATABASE );
     }
 
     @Override
     public void onUpgrade ( SQLiteDatabase db , int oldVersion , int newVersion ) {
-        db. execSQL (" DROP TABLE IF EXISTS " + TABLE);
+        db.execSQL (" DROP TABLE IF EXISTS " + TABLE);
         onCreate (db);
     }
 

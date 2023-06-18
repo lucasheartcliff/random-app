@@ -39,9 +39,9 @@ public class ProductDAO implements AutoCloseable{
         values.put(ProductSQLHelper.BRAND, p.getBrand());
         values.put(ProductSQLHelper.IS_REGULATED, p.isRegulated());
         values.put(ProductSQLHelper.RATE, p.getRate());
-        values.put(ProductSQLHelper.CREATED_AT, p.getCreatedAt().toString());
-        values.put(ProductSQLHelper.UPDATED_AT, p.getUpdatedAt().toString());
-return values;
+        values.put(ProductSQLHelper.CREATED_AT, p.getCreatedAt().getTime());
+        values.put(ProductSQLHelper.UPDATED_AT, p.getUpdatedAt().getTime());
+        return values;
     }
 
     public Product create(Product p) {
@@ -49,7 +49,7 @@ return values;
 
         long insertId = database.insert(ProductSQLHelper.TABLE, null,
                 values);
-        p.setId(insertId);
+        p.setId((int) insertId);
         return p;
     }
 
@@ -67,12 +67,12 @@ return values;
     }
     private Product buildProductFromCursor(Cursor cursor){
         Product product = new Product();
-        product.setId(cursor.getLong(0));
+        product.setId(cursor.getInt(0));
         product.setName(cursor.getString(1));
         product.setBrand(cursor.getString(2));
         product.setRegulated(cursor.getInt(3)==1);
         product.setRate(cursor.getDouble(4));
-        product.setCreatedAt(new Date(cursor.getLong(5))) ;
+        product.setCreatedAt(new Date(cursor.getLong(5)));
         product.setUpdatedAt(new Date(cursor.getLong(6)));
 
         return product;

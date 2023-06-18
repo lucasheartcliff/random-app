@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class Product implements Serializable {
-    private Long id;
+    private Integer id;
     private String name;
     private String brand;
     private boolean isRegulated;
@@ -12,11 +12,11 @@ public class Product implements Serializable {
     private Date createdAt;
     private Date updatedAt;
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

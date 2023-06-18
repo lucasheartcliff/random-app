@@ -45,8 +45,8 @@ public class FormView extends View {
     @Override
     protected void associateElements() {
         editName = findViewById(R.id.edit_name);
-        editBrand = findViewById(R.id.edit_state);
-        checkboxRegulated = findViewById(R.id.checkbox_airports);
+        editBrand = findViewById(R.id.edit_brand);
+        checkboxRegulated = findViewById(R.id.checkbox_regulated);
         editRate = findViewById(R.id.rate);
         editRate.setNumStars(5);
         btnSave = findViewById(R.id.btn_save);
@@ -60,6 +60,14 @@ public class FormView extends View {
     @SuppressLint("NewApi")
     private void onClickToSave(android.view.View view, Integer idx) {
         Product product = getProductFromView();
+
+        Optional<Object[]> optional = getParamsObject();
+
+        if(optional.isPresent()) {
+            Product p = (Product) optional.get()[1];
+            product.setCreatedAt(p.getCreatedAt());
+            product.setUpdatedAt(p.getUpdatedAt());
+        }
 
         if(idx !=null) productService.update(product);
         else productService.create(product);

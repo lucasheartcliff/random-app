@@ -53,11 +53,11 @@ public class ProductAdapter extends ArrayAdapter<Product> {
         Button deletebtn = listItemView.findViewById(R.id.btn_delete);
 
         textName.setText(currentItem.getName());
-        textBrand.setText(currentItem.getBrand());
-        textIsRegulated.setText(String.valueOf(currentItem.isRegulated()));
-        textRate.setText(String.valueOf(currentItem.getRate()));
-        textCreatedAt.setText(formatDate(currentItem.getCreatedAt()));
-        textUpdatedAt.setText(formatDate(currentItem.getUpdatedAt()));
+        textBrand.setText("Marca: "+currentItem.getBrand());
+        textIsRegulated.setText(currentItem.isRegulated()?"É regulamentado": "Não é regulamentado");
+        textRate.setText("N° de Estrelas: "+currentItem.getRate());
+        textCreatedAt.setText("Data de Criação: "+formatDate(currentItem.getCreatedAt()));
+        textUpdatedAt.setText("Data de Atualização: "+formatDate(currentItem.getUpdatedAt()));
         deletebtn.setOnClickListener(v -> {
             this.onClickToDelete.accept(Arrays.asList(v.getContext(),position,currentItem));
         });

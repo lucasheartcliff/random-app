@@ -29,7 +29,7 @@
             android:id="@+id/checkbox_regulated"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Is Regulated" />
+            android:text="É regulamentado?" />
 
         <RatingBar
             android:id="@+id/rate"
