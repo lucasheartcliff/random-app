@@ -6,7 +6,7 @@ import android.widget.Button;
 import com.example.calculator3.R;
 
 public class ActivityMainView extends View {
-    private Button citiesButton;
+    private Button productsButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,11 +16,11 @@ public class ActivityMainView extends View {
     }
     @Override
     protected void associateElements() {
-        citiesButton = findViewById(R.id.mainCitiesButton);
-        citiesButton.setOnClickListener(this::gotoCitiesPage);
+        productsButton = findViewById(R.id.mainProductsButton);
+        productsButton.setOnClickListener(this::gotoCitiesPage);
     }
 
     private void gotoCitiesPage(android.view.View view) {
-        toView(view.getContext(), CitiesListView.class,null,0);
+        toView(view.getContext(), ProductListView.class,null,0);
     }
 }

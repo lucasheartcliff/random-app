@@ -31,7 +31,7 @@
 
         </activity>
         <activity
-            android:name="com.example.randomapp.views.CitiesListView"
+            android:name="com.example.randomapp.views.ProductListView"
             android:exported="true">
 
         </activity>

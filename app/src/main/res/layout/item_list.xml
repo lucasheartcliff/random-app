@@ -6,11 +6,12 @@
     android:layout_height="wrap_content">
 
     <TableLayout
-        android:layout_width="411dp"
-        android:layout_height="250dp"
+        android:layout_width="409dp"
+        android:layout_height="192dp"
         android:padding="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:ignore="MissingConstraints">
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp">
 
         <TableRow>
 
@@ -26,99 +27,55 @@
         <TableRow>
 
             <TextView
-                android:id="@+id/text_state"
-                android:layout_width="57dp"
-                android:layout_height="22dp"
-                android:layout_weight="1"
-                android:textSize="14sp" />
-        </TableRow>
-
-        <TableRow>
-
-            <TextView
-                android:id="@+id/text_population"
-                android:layout_width="0dp"
-                android:layout_height="22dp"
-                android:layout_weight="1"
-                android:textSize="14sp" />
-        </TableRow>
-
-        <TableRow>
-
-            <TextView
-                android:id="@+id/text_income"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="14sp" />
-        </TableRow>
-
-        <TableRow>
-
-            <TextView
-                android:id="@+id/text_foundation_date"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="14sp" />
-        </TableRow>
-
-        <TableRow>
-
-
-            <TextView
-                android:id="@+id/text_extension_area"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="14sp" />
-        </TableRow>
-
-        <TableRow>
-
-            <TextView
-                android:id="@+id/text_weather"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="14sp" />
-        </TableRow>
-
-        <TableRow>
-
-            <TextView
-                android:id="@+id/text_airports"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="14sp" />
+                android:id="@+id/text_brand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
         </TableRow>
 
         <TableRow>
 
             <TextView
-                android:id="@+id/text_touristic"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="14sp" />
+                android:id="@+id/text_is_regulated"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
         </TableRow>
 
         <TableRow>
 
             <TextView
                 android:id="@+id/text_rate"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="14sp" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/text_created_at"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
         </TableRow>
 
+        <TableRow>
+
+            <TextView
+                android:id="@+id/text_updated_at"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </TableRow>
+
         <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_width="382dp"
+            android:layout_height="63dp">
+
+            <Button
+                android:id="@+id/btn_delete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Deletar" />
+        </TableRow>
 
     </TableLayout>
 

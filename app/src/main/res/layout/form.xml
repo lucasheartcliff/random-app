@@ -17,59 +17,19 @@
             android:id="@+id/edit_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Name" />
+            android:hint="Nome" />
 
         <EditText
-            android:id="@+id/edit_state"
+            android:id="@+id/edit_brand"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="State" />
-
-        <EditText
-            android:id="@+id/edit_population"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Population"
-            android:inputType="number" />
-
-        <EditText
-            android:id="@+id/edit_income"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Per Capita Income"
-            android:inputType="numberDecimal" />
-
-        <EditText
-            android:id="@+id/edit_foundation_date"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Foundation Date"
-            android:inputType="date" />
-
-        <EditText
-            android:id="@+id/edit_extension_area"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Extension Area"
-            android:inputType="numberDecimal" />
-
-        <Spinner
-            android:id="@+id/spinner_weather"
-            android:layout_width="378dp"
-            android:layout_height="46dp"
-            android:entries="@array/weather_options"/>
+            android:hint="Marca" />
 
         <CheckBox
-            android:id="@+id/checkbox_airports"
+            android:id="@+id/checkbox_regulated"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Has Airports" />
-
-        <CheckBox
-            android:id="@+id/checkbox_touristic"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Is Touristic" />
+            android:text="Is Regulated" />
 
         <RatingBar
             android:id="@+id/rate"

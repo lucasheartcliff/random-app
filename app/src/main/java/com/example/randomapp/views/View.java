@@ -14,7 +14,6 @@ import java.io.Serializable;
 import java.util.Optional;
 
 public abstract class View extends Activity {
-    protected static final String PREFS_NAME = "random_app";
 
 
     protected Double parseEditTextValueToDouble(EditText et) {
@@ -54,7 +53,4 @@ public abstract class View extends Activity {
         return Optional.ofNullable((T) getIntent().getSerializableExtra("params") );
     }
 
-    protected SharedPreferences getSharedPreferences(){
-        return super.getSharedPreferences(PREFS_NAME,Context.MODE_PRIVATE);
-    }
 }
