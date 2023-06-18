@@ -26,6 +26,7 @@ public class ProductDAO implements AutoCloseable{
 
     public void open() throws SQLException {
         database = helper.getWritableDatabase();
+        database.enableWriteAheadLogging();
     }
 
     @Override
@@ -55,8 +56,10 @@ public class ProductDAO implements AutoCloseable{
 
     public Product update(Product p) {
         ContentValues values = buildBaseContentValues(p);
+        String whereClause = ProductSQLHelper.ID + " = ?";
+        String[] whereArgs = { String.valueOf(p.getId()) };
 
-        database.update(ProductSQLHelper.TABLE, values, ProductSQLHelper.ID + "=" + p.getId(), null);
+        database.update(ProductSQLHelper.TABLE, values, whereClause, whereArgs);
         return p;
     }
 

@@ -65,6 +65,7 @@ public class FormView extends View {
 
         if(optional.isPresent()) {
             Product p = (Product) optional.get()[1];
+            product.setId(p.getId());
             product.setCreatedAt(p.getCreatedAt());
             product.setUpdatedAt(p.getUpdatedAt());
         }
